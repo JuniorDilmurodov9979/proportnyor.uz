@@ -161,9 +161,6 @@ export function Header() {
                     {t("Kontaktlar")}
                   </a>
                 </li>
-                <li>
-                  
-                </li>
               </ul>
             </div>
           )}

@@ -2,11 +2,14 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 // import BookingModal from "../../const/model";
+import { ToastContainer, toast } from "react-toastify";
 
+import "react-toastify/dist/ReactToastify.css";
 export function Contact() {
   const BookingModal = ({ isOpen, onClose }) => {
     if (!isOpen) return null;
     const { t, i18n } = useTranslation();
+    const notify = () => toast.success(t("alert_biz_tez_orada"));
 
     return (
       <div className="model__wrapper fixed pt-[10%] pb-[10%] inset-0 bg-black bg-opacity-50 flex justify-center items-center z-10">
@@ -63,10 +66,12 @@ export function Contact() {
                 ></textarea>
               </div>
               <button
+                onClick={notify}
                 loading={loading}
                 type="submit"
                 className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600"
               >
+                <ToastContainer  position="top-center"/>
                 {loading ? t("loading") : t("joy_band_qilish")}
               </button>
             </form>
@@ -157,7 +162,7 @@ export function Contact() {
     })
       .then((res) => {
         document.getElementById("contactForm").reset();
-        alert(t("alert_biz_tez_orada"));
+        // alert(t("alert_biz_tez_orada"));
       })
       .catch((err) => {
         console.log("Junatilmadi?!");

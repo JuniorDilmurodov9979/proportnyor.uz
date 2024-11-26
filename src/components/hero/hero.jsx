@@ -1,12 +1,11 @@
 import { useTranslation } from "react-i18next";
 
 import bannerPng from "../../assets/banner.png";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 export function Hero() {
   const { t, i18n } = useTranslation();
-  const handleSubmit = (evt) => {
-    evt.preventDefault(); // Prevent the default form submission behavior
-    alert(t("alert_biz_tez_orada"));
-  };
+  const notify = () => toast.success(t("alert_biz_tez_orada"));
   return (
     <section className="hero">
       <div className="hero__wrapper bg-[url(./assets/banner.png)] ">
@@ -34,7 +33,7 @@ export function Hero() {
               </div>
               <div className="hero-submit mt-[200px] border-b-4 border-[#4883ff]">
                 <form
-                  onSubmit={handleSubmit}
+                  // onSubmit={handleSubmit}
                   className="hero__form flex gap-5 p-[18px] bg-white "
                 >
                   <input
@@ -55,11 +54,13 @@ export function Hero() {
                     value={"2024-11-21"}
                     type="date"
                   />
-                  <div className="ml-auto border-l-[1px] pl-5">
+                  <div className="hero__btn-wrapper ml-auto border-l-[1px] pl-5">
                     <button
+                      onClick={notify}
                       className="hero__btn bg-[#4883ff]  inline-block w-[206px] font-medium text-[17px] text-[#fff] hover:bg-transparent hover:text-[#4883ff] border-solid border-[2px] border-[#4883ff] py-[10px] px-4 transition ease-linear duration-450 tracking-wide"
                       type="submit"
                     >
+                      <ToastContainer position="top-center" />
                       {t("joy_band_qilish")}
                     </button>
                   </div>
