@@ -1,45 +1,49 @@
+import { useTranslation } from "react-i18next";
+
 export function Pricing() {
+  const { t, i18n } = useTranslation();
+
   return (
     <section className="pricing">
       <div className="container">
         <div className="pricing__title-wrapper">
-          <span className="pricing__info">Maxsus Takliflar</span>
-          <h3 className="pricing__title">
-            O'zingiz orzu qilgan ta'tilni tanlang
-          </h3>
+          <span className="pricing__info">{t("pricing_info")}</span>
+          <h3 className="pricing__title">{t("pricing_title")}</h3>
         </div>
         <ul className="pricing__list">
           <li className="pricing__item">
             <div className="pricing__item-top">
-              <h4 className="pricing__item-title">Asosiy Sayohatchi</h4>
-              <p className="pricing__item-desc">Biz bilan bog'laning</p>
-              <p className="pricing__item-info">/individual</p>
+              <h4 className="pricing__item-title">
+                {t("pricing_item_title1")}
+              </h4>
+              <p className="pricing__item-desc">{t("pricing_item_desc")}</p>
+              <p className="pricing__item-info">{t("pricing_item_info")}</p>
             </div>
             <div className="pricing__item-btm">
               <ul className="pricing__item-list">
                 <li className="pricing__item--item">
                   <a className="pricing__item-link" href="#">
-                    Moslashtirilgan Sayohat Rejasi
+                    {t("pricing_item1_link1")}
                   </a>
                 </li>
                 <li className="pricing__item--item">
                   <a className="pricing__item-link" href="#">
-                    Shakllantirilgan Manzil Qo'llanmalar
+                    {t("pricing_item1_link2")}
                   </a>
                 </li>
                 <li className="pricing__item--item">
                   <a className="pricing__item-link" href="#">
-                    Mutaxassis Bilan Sayohat Muhokamasi
+                    {t("pricing_item1_link3")}
                   </a>
                 </li>
                 <li className="pricing__item--item">
                   <a className="pricing__item-link" href="#">
-                    24/7 Xizmat Ko'rsatish
+                    {t("pricing_item1_link4")}
                   </a>
                 </li>
                 <li className="pricing__item--item">
                   <a className="pricing__item-link" href="#">
-                    Moslashuvchan Narxlar
+                    {t("pricing_item1_link5")}
                   </a>
                 </li>
                 <li className="pricing__item--item">
@@ -47,7 +51,7 @@ export function Pricing() {
                     className="pricing__item-link--last"
                     href="tel:+998974420308"
                   >
-                    Bog'lanish
+                    {t("boglanish")}
                   </a>
                 </li>
               </ul>
@@ -55,35 +59,37 @@ export function Pricing() {
           </li>
           <li className="pricing__item">
             <div className="pricing__item-top">
-              <h4 className="pricing__item-title">Premium Sayohatchi</h4>
-              <p className="pricing__item-desc">Biz bilan bog'laning</p>
-              <p className="pricing__item-info">/individual</p>
+              <h4 className="pricing__item-title">
+                {t("pricing_item_title2")}
+              </h4>
+              <p className="pricing__item-desc">{t("pricing_item_desc")}</p>
+              <p className="pricing__item-info">{t("pricing_item_info")}</p>
             </div>
             <div className="pricing__item-btm">
               <ul className="pricing__item-list">
                 <li className="pricing__item--item">
                   <a className="pricing__item-link" href="#">
-                    Luks Mekhmonxona Joylashuvi
+                    {t("pricing_item2_link1")}
                   </a>
                 </li>
                 <li className="pricing__item--item">
                   <a className="pricing__item-link" href="#">
-                    Maxsus Tajribalar
+                    {t("pricing_item2_link2")}
                   </a>
                 </li>
                 <li className="pricing__item--item">
                   <a className="pricing__item-link" href="#">
-                    Maxsus Yo'lboshlovchi
+                    {t("pricing_item2_link3")}
                   </a>
                 </li>
                 <li className="pricing__item--item">
                   <a className="pricing__item-link" href="#">
-                    Moslashtirilgan Sayohat Paketlari
+                    {t("pricing_item2_link4")}
                   </a>
                 </li>
                 <li className="pricing__item--item">
                   <a className="pricing__item-link" href="#">
-                    Muzokaralar uchun Narxlar
+                    {t("pricing_item2_link5")}
                   </a>
                 </li>
                 <li className="pricing__item--item">
@@ -91,7 +97,7 @@ export function Pricing() {
                     className="pricing__item-link--last"
                     href="tel:+998974420308"
                   >
-                    Bog'lanish
+                    {t("boglanish")}
                   </a>
                 </li>
               </ul>
@@ -99,30 +105,32 @@ export function Pricing() {
           </li>
           <li className="pricing__item">
             <div className="pricing__item-top">
-              <h4 className="pricing__item-title">Maksimal Sayohatchi</h4>
-              <p className="pricing__item-desc">Biz bilan bog'laning</p>
-              <p className="pricing__item-info">/individual</p>
+              <h4 className="pricing__item-title">
+                {t("pricing_item_title3")}
+              </h4>
+              <p className="pricing__item-desc"> {t("pricing_item_desc")}</p>
+              <p className="pricing__item-info"> {t("pricing_item_info")}</p>
             </div>
             <div className="pricing__item-btm">
               <ul className="pricing__item-list">
                 <li className="pricing__item--item">
                   <a className="pricing__item-link" href="#">
-                    VIP Sayohat Dasturi
+                    {t("pricing_item3_link1")}
                   </a>
                 </li>
                 <li className="pricing__item--item">
                   <a className="pricing__item-link" href="#">
-                    Maxsus Lyuks Tajribalar
+                    {t("pricing_item3_link2")}
                   </a>
                 </li>
                 <li className="pricing__item--item">
                   <a className="pricing__item-link" href="#">
-                    Moslashuvchan va Muzokaralar uchun Narxlar
+                    {t("pricing_item3_link3")}
                   </a>
                 </li>
                 <li className="pricing__item--item">
                   <a className="pricing__item-link" href="#">
-                    Ajoyib Taassurotlar
+                    {t("pricing_item3_link4")}
                   </a>
                 </li>
                 <li className="pricing__item--item">
@@ -130,7 +138,7 @@ export function Pricing() {
                     className=" pricing__item-link--last"
                     href="tel:+998974420308"
                   >
-                    Bog'lanish
+                    {t("boglanish")}
                   </a>
                 </li>
               </ul>

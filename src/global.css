@@ -73,20 +73,29 @@ color: #4883ff;
 /* Dropdown content (hidden by default) */
 
 .dropdown-content {
-transition: all 0.5s;
-    
-  position: absolute;
-  top: 100%; /* Position it directly below the flag */
-  left: -20px;
-  background-color: #fff;
-  min-width: 150px;
-  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  display: block;
-  /* margin-top: 0px; */
-  border-radius: 4px;
+transition: all .5s;
+    position: absolute;
+    top: 100%;
+    left: -20px;
+    background-color: #fff;
+    min-width: 150px;
+    box-shadow: 0 8px 16px #0003;
+    z-index: 1;
+    display: block;
+    border-radius: 4px;
 }
+.dropdown-item {
+   display: block;
+   width: 100%;
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #7a7a7a;
+    transition: all .5s;
+}
+.dropdown-item:first-child {
+    border-bottom: 1px solid #7a7a7a;
 
+}
 /* Style for each flag option */
 .dropdown-content a {
   display: block;
@@ -94,6 +103,12 @@ transition: all 0.5s;
   text-align: center;
   border-bottom: 1px solid #7a7a7a;
 transition: all 0.5s;
+}
+.dropdown-content img {
+    width: 25px;
+    height: auto;
+    display: block;
+    transition: all .5s;
 
 }
 
@@ -750,6 +765,23 @@ width: 100%;
   .burger-menu {
       display: none;
     }
+.burger_list {
+    background-color: white;
+}
+    .burger_list li{
+
+        border-bottom: 1px solid #ddd;
+    }
+    .burger_list a {
+        color: #121212;
+    font-weight: bold;
+    line-height: 100px;
+    padding: 0px 15px;
+    font-size: 17px;
+    font-weight: 700;
+    transition: all 0.5s;
+    }
+
 @media only screen and (min-width: 1000px) {
 .hero-content__wrapper {
     margin-left: auto;
@@ -840,6 +872,9 @@ font-size: 32px;
     }
     .hero__desc {
         font-size: 17px;
+    }
+    .hero__content-title-wrapper {
+        padding-bottom: 200px;
     }
     .hero__form {
         margin: 0 auto;

@@ -1,8 +1,11 @@
+import { useTranslation } from "react-i18next";
+
 import bannerPng from "../../assets/banner.png";
 export function Hero() {
+  const { t, i18n } = useTranslation();
   const handleSubmit = (evt) => {
     evt.preventDefault(); // Prevent the default form submission behavior
-    alert("Biz tez orada siz bilan bog'lanamiz, rahmat!");
+    alert(t("alert_biz_tez_orada"));
   };
   return (
     <section className="hero">
@@ -15,18 +18,17 @@ export function Hero() {
                 id="bron"
               >
                 <h1 className="hero__title text-white text-[42px] ">
-                  Sayohat qilishni xohlaysizmi?
+                  {t("Sayohat1")}
                 </h1>
                 <p className="hero__desc text-white text-[22px] tracking-wide">
-                  Sayohat orzularingizni haqiqatga aylantiring: rejalashtiring,
-                  kashf qiling va unutilmas xotiralar yarating.
+                  {t("Sayohat2")}
                 </p>
                 <div className="mt-2">
                   <a
                     href="#planId"
                     className="hero__link bg-[#4883ff] inline-block font-medium text-[15px] text-[#fff] hover:bg-transparent hover:text-[#4883ff] border-solid border-[2px] border-[#4883ff] py-[10px] px-4 transition ease-linear duration-450"
                   >
-                    Ko'proq bilish
+                    {t("koproq_bilish")}
                   </a>
                 </div>
               </div>
@@ -38,13 +40,13 @@ export function Hero() {
                   <input
                     required
                     className="w-[205px] text-[#9a9a9a] border-r-[1px] outline-0"
-                    placeholder="ismingiz..."
+                    placeholder={t("form_name")}
                     type="text"
                   />
                   <input
                     required
                     className="w-[205px] text-[#9a9a9a] outline-0 border-r-[1px]"
-                    placeholder="Manzilingiz..."
+                    placeholder={t("form_place")}
                     type="text"
                   />
                   <input
@@ -58,7 +60,7 @@ export function Hero() {
                       className="hero__btn bg-[#4883ff]  inline-block w-[206px] font-medium text-[17px] text-[#fff] hover:bg-transparent hover:text-[#4883ff] border-solid border-[2px] border-[#4883ff] py-[10px] px-4 transition ease-linear duration-450 tracking-wide"
                       type="submit"
                     >
-                      Joy Band Qilish
+                      {t("joy_band_qilish")}
                     </button>
                   </div>
                 </form>

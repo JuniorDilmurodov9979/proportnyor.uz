@@ -1,6 +1,9 @@
 import FooterLogo from "../../assets/logoFooter.png";
 import Facebook from "../../assets/facebook.svg";
+import { useTranslation } from "react-i18next";
 export function Footer() {
+  const { t, i18n } = useTranslation();
+
   return (
     <footer className="footer">
       <div className="container">
@@ -9,10 +12,7 @@ export function Footer() {
             <a href="">
               <img className="footer__logo" src={FooterLogo} alt="" />
             </a>
-            <p className="footer__right-desc">
-              Biz bilan dunyoni zabt eting. Sayohat tashkil qilishda eng yaxshi
-              hamkoringiz
-            </p>
+            <p className="footer__right-desc">{t("footer_r_desc")}</p>
             <ul className="footer__right-list">
               <li className="footer__right-item">
                 <a
@@ -41,29 +41,29 @@ export function Footer() {
             </ul>
           </div>
           <div className="footer__mid-wrapper">
-            <h4 className="footer__mid-title">Foydali Havolalar</h4>
+            <h4 className="footer__mid-title">{t("footer_m_title")}</h4>
             <div className="footer__mid-inner">
               <ul className="footer__mid-list">
                 <li className="footer__mid-item">
                   <ul className="flex flex-col gap-3">
                     <li>
                       <a className="footer__mid-link" href="#">
-                        Manzillar
+                        {t("footer_m_link1")}
                       </a>
                     </li>
                     <li>
                       <a className="footer__mid-link" href="#">
-                        Turlar
+                        {t("footer_m_link2")}
                       </a>
                     </li>
                     <li>
                       <a className="footer__mid-link" href="#">
-                        Maxsus Takliflar
+                        {t("footer_m_link3")}
                       </a>
                     </li>
                     <li>
                       <a className="footer__mid-link" href="#">
-                        Mijoz Fikrlari
+                        {t("footer_m_link4")}
                       </a>
                     </li>
                   </ul>
@@ -72,22 +72,22 @@ export function Footer() {
                   <ul className="flex flex-col gap-3">
                     <li>
                       <a className="footer__mid-link" href="#">
-                        Blog
+                        {t("footer_m_link5")}
                       </a>
                     </li>
                     <li>
                       <a className="footer__mid-link" href="#">
-                        Biz bilan Aloqa
+                        {t("footer_m_link6")}
                       </a>
                     </li>
                     <li>
                       <a className="footer__mid-link" href="#">
-                        Biz Haqimizda
+                        {t("footer_m_link7")}
                       </a>
                     </li>
                     <li>
                       <a className="footer__mid-link" href="#">
-                        Maxfiylik Siyosati
+                        {t("footer_m_link8")}
                       </a>
                     </li>
                   </ul>
@@ -97,15 +97,14 @@ export function Footer() {
           </div>
           <div className="footer__left-wrapper">
             <h4 className="footer__mid-title footer__left-title">
-              Aloqa Ma'lumoti
+              {t("footer_l_title")}
             </h4>
             <p className="footer__left-desc footer__right-desc">
-              Keyingi sayohatingizga tayyor bo'lib, shaxsiy sayohat yordam va
-              so'rovnoma uchun biz bilan bog'laning.
+              {t("footer_l_desc")}
             </p>
             <ul className="footer__left-list">
               <li className="flex gap-4">
-                <p className="footer__left-info">Telefon:</p>
+                <p className="footer__left-info">{t("tel_raqam")}</p>
                 <a className="footer__left-link" href="tel:+998974420308">
                   +998 97 442 03 08
                 </a>
@@ -120,13 +119,13 @@ export function Footer() {
                 </a>
               </li>
               <li className="flex gap-4">
-                <p className="footer__left-info">Manzil:</p>
+                <p className="footer__left-info">{t("manzil")}</p>
                 <a
                   className="footer__left-link"
                   href="https://www.google.com/maps/search/Labzak+76,+Toshkent+shahri/@41.3273652,69.2548084,16z/data=!3m1!4b1?entry=ttu&g_ep=EgoyMDI0MTExOS4yIKXMDSoASAFQAw%3D%3D"
                   target="_blank"
                 >
-                  Labzak 76, Toshkent shahri
+                  Labzak 76, Tashkent
                 </a>
               </li>
             </ul>

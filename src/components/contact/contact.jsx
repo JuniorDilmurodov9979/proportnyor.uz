@@ -1,10 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 // import BookingModal from "../../const/model";
 
 export function Contact() {
   const BookingModal = ({ isOpen, onClose }) => {
     if (!isOpen) return null;
+    const { t, i18n } = useTranslation();
 
     return (
       <div className="model__wrapper fixed pt-[10%] pb-[10%] inset-0 bg-black bg-opacity-50 flex justify-center items-center z-10">
@@ -12,10 +14,10 @@ export function Contact() {
           {/* Left Section: Form */}
           <div className="p-8 flex-1 sm:w-1/2">
             <h2 className="text-lg font-semibold text-blue-600 text-center sm:text-left">
-              Joy Band Qilish
+              {t("joy_band_qilish")}
             </h2>
             <p className="mt-2 text-gray-700 text-xl font-medium text-center sm:text-left">
-              Keling, keyingi sayohatingizni rejalashtiramiz
+              {t("modal_info")}
             </p>
             <form
               id="contactForm"
@@ -28,7 +30,7 @@ export function Contact() {
                   name="name"
                   id="name"
                   type="text"
-                  placeholder="Ismingiz..."
+                  placeholder={t("form_name")}
                   className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
                 <input
@@ -36,7 +38,7 @@ export function Contact() {
                   name="email"
                   id="email"
                   type="email"
-                  placeholder="Email manzilingiz..."
+                  placeholder={t("email_place")}
                   className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
@@ -46,7 +48,7 @@ export function Contact() {
                   name="tel"
                   id="tel"
                   type="text"
-                  placeholder="Telefon raqamingiz..."
+                  placeholder={t("tel_place")}
                   className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 />
               </div>
@@ -56,7 +58,7 @@ export function Contact() {
                   name="message"
                   id="message"
                   rows="4"
-                  placeholder="Sayohat rejalaringiz haqida ayting..."
+                  placeholder={t("textarea_place")}
                   className="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
                 ></textarea>
               </div>
@@ -65,34 +67,31 @@ export function Contact() {
                 type="submit"
                 className="w-full bg-blue-500 text-white py-2 rounded-lg hover:bg-blue-600"
               >
-                {loading ? "Joy band qilinmoqda..." : "Joy band qilish"}
+                {loading ? t("loading") : t("joy_band_qilish")}
               </button>
             </form>
           </div>
 
           {/* Right Section: Contact Info */}
           <div className="model__rigth-wrapper bg-blue-600 text-white p-8 sm:w-96 mt-8 sm:mt-0">
-            <h3 className="text-xl font-semibold">Biz bilan bog‘laning</h3>
-            <p className="mt-4 text-lg">Sizning sayohatdagi hamrohingiz</p>
-            <p className="mt-4">
-              Dam olish uchun sayohatni biz bilan rejalashtiring. Bizning jamoa
-              sizga yordam berishga tayyor.
-            </p>
+            <h3 className="text-xl font-semibold">{t("pricing_item_desc")}</h3>
+            <p className="mt-4 text-lg">{t("modal_r_title")} </p>
+            <p className="mt-4">{t("modal_r_desc")}</p>
             <ul className="flex flex-col gap-2">
               <li className="mt-6 flex gap-2">
-                <span className="font-medium">Telefon raqam:</span>{" "}
+                <span className="font-medium">{t("tel_raqam")} </span>
                 <a href="tel:+998974420308">+998 97 442 03 08</a>
               </li>
               <li className="mt-2 flex gap-2">
-                <span className="font-medium">Email:</span>{" "}
+                <span className="font-medium">Email:</span>
                 <a href="mailto:saidalimov112233@gmail.com">
                   saidalimov112233@gmail.com
                 </a>
               </li>
               <li className="mt-2 flex gap-2">
-                <span className="font-medium">Manzil:</span>{" "}
+                <span className="font-medium">{t("manzil")} </span>
                 <a href="https://www.google.com/maps/place/..." target="_blank">
-                  Labzak 76, Tashkent shahri
+                  Labzak 76, Tashkent
                 </a>
               </li>
             </ul>
@@ -158,7 +157,7 @@ export function Contact() {
     })
       .then((res) => {
         document.getElementById("contactForm").reset();
-        alert("Biz tez orada siz bilan bog'lanamiz, rahmat!");
+        alert(t("alert_biz_tez_orada"));
       })
       .catch((err) => {
         console.log("Junatilmadi?!");
@@ -168,6 +167,7 @@ export function Contact() {
       });
   };
 
+  const { t, i18n } = useTranslation();
   return (
     <section className="contact" id="contact">
       <div className="contact__map">
@@ -182,10 +182,10 @@ export function Contact() {
         ></iframe>
       </div>
       <div className="contact__inner relative flex justify-center items-center">
-        <p className="contact__info">Biz bilan o'z joyingizni band qiling!</p>
-        <h3 className="contact__title">Ta'tilingizni biz bilan o'tkazing</h3>
+        <p className="contact__info">{t("contact_info")}</p>
+        <h3 className="contact__title">{t("contact_title")}</h3>
         <button onClick={() => setIsModalOpen(true)} className="contact__link">
-          Joy Band Qilish
+          {t("joy_band_qilish")}
         </button>
         <BookingModal
           isOpen={isModalOpen}

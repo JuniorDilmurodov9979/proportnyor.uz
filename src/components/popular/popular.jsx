@@ -1,17 +1,18 @@
+import { useTranslation } from "react-i18next";
 import Dubai from "../../assets/dubai2.jpg";
 import Istanbul from "../../assets/istanbul2.jpg";
 import Sharm from "../../assets/sharm2.jpg";
 export function Popular() {
+  const { t, i18n } = useTranslation();
+
   return (
     <section className="popular bg-[#f4f4f4] " id="about">
       <div className="container">
         <div className="popular__desc-wrapper flex flex-col items-center gap-4">
           <span className="popular__desc text-[17px] block text-[#4883ff] ">
-            Bizning mashhur manzillarimiz
+            {t("mashhur_manzil")}
           </span>
-          <h3 className="popular__title">
-            Dubay, Turkiya, Sharm El Sheyhni biz bilan kashf eting
-          </h3>
+          <h3 className="popular__title">{t("popular_title")}</h3>
         </div>
         <div className="popular__content-wrapper">
           <ul className="popular__list">
@@ -23,27 +24,22 @@ export function Popular() {
               />
               <div className="popular__item-inner">
                 <h4 className="popular__item-title">
-                  Dubayda hashamatni his eting
+                  {t("popular_item_title1")}
                 </h4>
                 <span className="popular__item-info">
-                  Shahar va sahro uyg'unligi
+                  {t("popular_item_info1")}
                 </span>
-                <p className="popular__item-desc">
-                  Dubayning osmono'par binolari, hashamatli xaridlari va cho'l
-                  sarguzashtlarining boyligidan zavqlaning. Madaniyat va
-                  isrofgarchilikning ajoyib uyg'unligini taklif qiluvchi
-                  an'analar zamonaviylikka mos keladigan shaharni o'rganing.
-                </p>
+                <p className="popular__item-desc">{t("popular_item_desc1")}</p>
               </div>
               <div className="popular__item-link-wrapper">
                 <a
                   className="popular__item-link uppercase"
                   href="tel:+998 97 442 03 08"
                 >
-                  koproq bilish
+                  {t("koproq_bilish")}
                 </a>
                 <a className="popular__item-link uppercase" href="#bron">
-                  band qilish
+                  {t("band_qilish")}
                 </a>
               </div>
             </li>
@@ -55,27 +51,22 @@ export function Popular() {
               />
               <div className="popular__item-inner">
                 <h4 className="popular__item-title">
-                  Turkiya madaniyatini kashf eting
+                  {t("popular_item_title2")}
                 </h4>
                 <span className="popular__item-info">
-                  Tarixiy mo'jizalar va hayratlanarli manzaralar
+                  {t("popular_item_info2")}
                 </span>
-                <p className="popular__item-desc">
-                  Turkiyaning qadimiy xarobalardan tortib jonli bozorlarigacha
-                  bo'lgan jozibali tarixiga sho'ng'ing. Turkiyani ziyorat qilish
-                  kerak bo'lgan manzilga aylantiradigan go'zal manzaralar,
-                  mazali taomlar va samimiy mehmondo'stlikdan rohatlaning.
-                </p>
+                <p className="popular__item-desc">{t("popular_item_desc2")}</p>
               </div>
               <div className="popular__item-link-wrapper">
                 <a
                   className="popular__item-link uppercase"
                   href="tel:+998 97 442 03 08"
                 >
-                  koproq bilish
+                  {t("koproq_bilish")}
                 </a>
                 <a className="popular__item-link uppercase" href="#bron">
-                  band qilish
+                  {t("band_qilish")}
                 </a>
               </div>
             </li>
@@ -87,27 +78,22 @@ export function Popular() {
               />
               <div className="popular__item-inner">
                 <h4 className="popular__item-title">
-                  Sharm El-Sheykhda dam oling
+                  {t("popular_item_title3")}
                 </h4>
                 <span className="popular__item-info">
-                  Quyosh, dengiz va osoyishtalik
+                  {t("popular_item_info3")}
                 </span>
-                <p className="popular__item-desc">
-                  Sharm al-Shayxning ajoyib plyajlari va marjon riflariga
-                  boring. Tiniq suvlarga sho'ng'ing, hashamatli dam olish
-                  maskanlarida dam oling va ushbu tropik jannatda eng yaxshi dam
-                  olishni his qiling.
-                </p>
+                <p className="popular__item-desc">{t("popular_item_desc3")}</p>
               </div>
               <div className="popular__item-link-wrapper">
                 <a
                   className="popular__item-link uppercase"
                   href="tel:+998 97 442 03 08"
                 >
-                  koproq bilish
+                  {t("koproq_bilish")}
                 </a>
                 <a className="popular__item-link uppercase" href="#bron">
-                  band qilish
+                  {t("band_qilish")}
                 </a>
               </div>
             </li>
